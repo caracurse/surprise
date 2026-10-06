@@ -42,7 +42,7 @@ function handleLogin(){
 
     setTimeout(()=>{
       card.classList.add('leaving');
-      window.location.href = './pages/surprise.html';
+      window.location.href = './surprise.html';
       setTimeout(()=>{
         card.classList.remove('leaving');
         card.classList.remove('success-state');
