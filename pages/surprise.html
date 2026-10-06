@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Сюрприз ❤</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Montserrat:wght@300;400;500&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="../assets/css/surprise.css">
+        <link rel="icon" href="assets/images/logo.svg" type="image/svg+xml">
+    </head>
+    <body>
+
+        <div class="petals" id="petals"></div>
+
+        <div class="progress" id="progress">
+            <div class="dot" data-step="1"></div>
+            <div class="dot" data-step="2"></div>
+            <div class="dot" data-step="3"></div>
+            <div class="dot" data-step="4"></div>
+        </div>
+
+        <section class="screen active" data-step="0">
+            <div class="sealed-card" id="sealedCard" onclick="openLetter()">
+                <div class="card-lines top"></div>
+                <div class="card-lines bottom"></div>
+                <div class="card-title">для тебя</div>
+                <div class="seal">❤</div>
+            </div>
+            <div class="hint-text">нажми, чтобы открыть</div>
+        </section>
+
+        <section class="screen" data-step="1">
+            <div class="content">
+                <div class="eyebrow">глава первая</div>
+                <h1 id="greetTitle"></h1>
+                <p class="fade-text">Я приготовил для тебя маленькое
+                    путешествие.<br>
+                    Пять тёплых остановок — и один настоящий сюрприз в самом
+                    конце.</p>
+                <p class="fade-text small">Готова? Тогда идём)</p>
+                <button class="btn" onclick="next(2)">начать</button>
+            </div>
+        </section>
+
+        <section class="screen" data-step="2">
+            <div class="content">
+                <div class="eyebrow">глава вторая</div>
+                <h2>Спрятанные сердечки</h2>
+                <p class="fade-text">Пять маленьких сердец разлетелись по этой
+                    странице.<br>
+                    Найди их все — и узнаешь, что дальше.</p>
+            </div>
+            <div class="counter" id="counter"><span id="foundCount">0</span> /
+                5</div>
+            <button class="btn next-btn" id="heartsNext"
+                onclick="next(3)">дальше</button>
+        </section>
+
+        <section class="screen" data-step="3">
+            <div class="content">
+                <div class="eyebrow">глава третья</div>
+                <h2>Наши маленькие вечера</h2>
+                <p class="fade-text small">Нажми на каждую карточку — внутри
+                    спрятано тёплое.</p>
+
+                <div class="cards">
+                    <div class="card"
+                        onclick="this.classList.toggle('flipped')">
+                        <div class="card-inner">
+                            <div class="card-front">01</div>
+                            <div class="card-back">Помнишь тот вечер, когда мы
+                                просто шли и говорили обо всём? Я тогда понял,
+                                что мне никто больше не нужен.</div>
+                        </div>
+                    </div>
+                    <div class="card"
+                        onclick="this.classList.toggle('flipped')">
+                        <div class="card-inner">
+                            <div class="card-front">02</div>
+                            <div class="card-back">Твой смех, когда ты думаешь,
+                                что я совсем дурашка. Это моё самое любимое в
+                                мире.</div>
+                        </div>
+                    </div>
+                    <div class="card"
+                        onclick="this.classList.toggle('flipped')">
+                        <div class="card-inner">
+                            <div class="card-front">03</div>
+                            <div class="card-back">Каждое «доброе утро)» от тебя
+                                — это причина улыбнуться, даже если день начался
+                                плохо.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn" onclick="next(4)">дальше</button>
+            </div>
+        </section>
+
+        <section class="screen" data-step="4">
+            <div class="content letter-content">
+                <div class="eyebrow">последняя глава</div>
+                <h2>И самое главное</h2>
+
+                <div class="letter">
+                    <p id="finalText"></p>
+                </div>
+
+                <div class="hint-box" id="hintBox">
+                    <div class="hint-title">🎁 В скором времени тебя ждёт ещё
+                        подарок</div>
+
+                    <p>Ты найдёшь свой сюрприз 25.10.2026 на пороге своей
+                        квартиры!<br>
+                        Пока придётся подождать... Но тебе это не составит
+                        труда)</p>
+
+                </div>
+
+                <button class="btn ghost" onclick="restart()">пройти
+                    заново</button>
+            </div>
+        </section>
+
+        <script src="../assets/js/surprise.js"></script>
+    </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тебя ждёт интересное приключение...</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Montserrat:wght@300;400;500&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="icon" href="assets/images/logo.svg" type="image/svg+xml">
+  </head>
+  <body>
+
+    <div class="petals" id="petals"></div>
+
+    <div class="login-card" id="loginCard">
+      <div class="seal">❤</div>
+
+      <div class="form-inner">
+        <div class="eyebrow">прежде чем войти</div>
+        <h1>Пройди проверку получателя</h1>
+        <p class="subtitle">Это не обычный вход.<br>Здесь пароль — то, что знаем
+          только мы.</p>
+
+        <form id="loginForm" onsubmit="event.preventDefault(); handleLogin();">
+          <div class="field" id="fieldUser">
+            <input type="text" id="userInput" placeholder=" " autocomplete="off"
+              required>
+            <label for="userInput">Имя, которым я тебя зову</label>
+            <span class="icon">✦</span>
+          </div>
+
+          <div class="field" id="fieldPass">
+            <input type="password" id="passInput" placeholder=" "
+              autocomplete="off" required>
+            <label for="passInput">Наш код</label>
+            <span class="icon">✦</span>
+          </div>
+
+          <div class="error-msg" id="errorMsg">Не то. Попробуй ещё раз — ты
+            точно знаешь 💭</div>
+
+          <button class="btn" type="submit" id="loginBtn">Войти в нашу
+            историю</button>
+        </form>
+
+        <div class="helper">
+          Забыла? <span class="hint-link" onclick="toggleHint()">вот маленькая
+            подсказка</span>
+          <div class="hint-tip" id="hintTip">
+            Имя... *** души моей... Думаю, ты поняла)<br>
+            (псс... с маленькой буквы...)<br>
+            Код... А когда мы начали встречаться?)
+          </div>
+        </div>
+      </div>
+
+      <div class="success">
+        <svg class="success-heart" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12 21s-7.5-4.8-9.8-9.2C.6 8.4 2.3 4.8 5.6 4.1 8 3.6 10.2 4.8 12 7c1.8-2.2 4-3.4 6.4-2.9 3.3.7 5 4.3 3.4 7.7C19.5 16.2 12 21 12 21z" />
+        </svg>
+        <div class="success-text">Добро пожаловать домой</div>
+        <div class="success-sub">открываю...</div>
+      </div>
+    </div>
+
+    <div class="footer-note">сделано с любовью ✿</div>
+
+    <script src="assets/js/login.js"></script>
+  </body>
+</html>
